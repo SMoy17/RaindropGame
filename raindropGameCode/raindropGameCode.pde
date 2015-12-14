@@ -18,6 +18,7 @@ void setup() {
 }
 
 void draw() {
+  for (int i = 0; i < count; i++) {
   mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
   background(0, 200, 255);
   r[i].fall();         //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
@@ -28,4 +29,5 @@ void draw() {
   if (r[i].loc.y > height + r[i].diam/2) {     //check to see if the raindrop goes below the bottom of the screen
     r[i].reset();                           //if it does, reset the raindrop
   }
+}
 }
