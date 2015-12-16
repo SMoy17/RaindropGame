@@ -1,19 +1,19 @@
-class catcher {
+class Catcher {
   PVector loc;
   int diam;
 
+  Catcher(int tDiam) {
+    loc = new PVector(mouseX, mouseY);
+    diam=tDiam;
+    tDiam = 40;
+  }
 
-Catcher(int tDiam) {
-  loc = new PVector(mouseX, mouseY);
-  tDiam = 40;
-}
-  
   void display () { //display bucket
     fill(0);
-    ellipse(loc.x, loc.y, tDiam, tDiam);
+    ellipse(loc.x, loc.y, diam, diam);
   }
-  
+
   void update () {
-    loc.set(mouseX,mouseY);
+    loc.set(mouseX, mouseY);
   }
-  
+}

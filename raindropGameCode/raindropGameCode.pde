@@ -4,6 +4,7 @@ Raindrop [] r = new Raindrop [count]; //declare a new Raindrop called r
 Catcher c;
 
 void setup() {
+  c = new Catcher(50);
   size(1200, 800);
   mouse = new PVector();  //initialize mouse PVector. value is irrelevant since it will be set at the start of void draw(){}
 
@@ -20,7 +21,7 @@ void draw() {
     r[i].display();      //display the raindrop
     c.display();
     c.update();
-    if (r[i].isInContactWith(bucket)) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
+    if (r[i].isInContactWith(c)) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
       r[i].reset();                         //if it is, reset the raindrop
     }
     if (r[i].loc.y > height + r[i].diam/2) {     //check to see if the raindrop goes below the bottom of the screen
