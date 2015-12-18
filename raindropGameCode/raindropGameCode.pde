@@ -4,6 +4,7 @@ Raindrop [] r = new Raindrop [count]; //declare a new Raindrop called r
 Catcher c;
 
 void setup() {
+  noStroke();
   c = new Catcher(50);
   size(1200, 800);
   mouse = new PVector();  //initialize mouse PVector. value is irrelevant since it will be set at the start of void draw(){}
