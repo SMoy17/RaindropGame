@@ -15,8 +15,8 @@ class Raindrop {
   }
 
   void fall() {  //raindrop falls
-    loc.y = loc.y + vel.y;
-    vel.add(acc);
+  vel.add(acc);
+   loc.add(vel);
   }
 
   void reset() { //reset raindrop
