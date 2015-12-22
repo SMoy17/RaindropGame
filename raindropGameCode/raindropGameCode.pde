@@ -16,7 +16,7 @@ void setup() {
 void draw() {
   mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
   background(0, 50, 100);
-  raindrops.add(new Raindrop(random(0, width), random(0, height)));
+  raindrops.add(new Raindrop(random(0, width), 0));
   for (int i = raindrops.size()-1; i >= 0; i--) {
     Raindrop r = raindrops.get(i);
     r.display();
