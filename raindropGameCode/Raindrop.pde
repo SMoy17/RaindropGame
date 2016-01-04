@@ -5,18 +5,18 @@ class Raindrop {
   Raindrop(float x, float y) { //class
     loc = new PVector(x, y);
     vel = new PVector(0, random(0, 3));
-    acc = new PVector(0, .01);
+    acc = new PVector(0, .08);
     diam = 20;
   }
 
   void display () { //display raindrop
-    fill(0, 110, 255);
+    fill(0, 205, 255);
     ellipse(loc.x, loc.y, diam, diam);
   }
 
   void fall() {  //raindrop falls
-  vel.add(acc);
-   loc.add(vel);
+    vel.add(acc);
+    loc.add(vel);
   }
 
   void reset() { //reset raindrop

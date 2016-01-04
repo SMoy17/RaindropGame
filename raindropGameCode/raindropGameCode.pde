@@ -1,11 +1,13 @@
 ArrayList<Raindrop> raindrops = new ArrayList<Raindrop>();
 
+int score;  //score variable
 int count = 100; 
 PVector mouse;   //declare a P
 Raindrop [] r = new Raindrop [count]; //declare a new Raindrop called r
 Catcher c;
 
 void setup() {
+  score=0;  //score value
   noStroke();
   c = new Catcher(50);
   size(1200, 800);
@@ -24,7 +26,14 @@ void draw() {
     c.display();
     c.update();
     if (r.isInContactWith(c)) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
-      raindrops.remove(i);                       //if it is, reset the raindrop
+      raindrops.remove(i); //if it is, reset the raindrop
+      score=score+1;  //score increases by one
     }
+    textSize(30);
+    text(score, width/2, height/2);  //placement of score
+    text("collect 100 raindrops to win", width/3, height/4);
+  }
+  if (score > 100) {
+    background(0);
   }
 }
